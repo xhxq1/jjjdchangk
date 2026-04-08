@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致婉清姐姐 · 26岁生日快乐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        /* 柔和蓝白色背景 */
+        body {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff, #f8fcff, #ffffff);
+            background-size: 300% 300%;
+            animation: bgGradient 20s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #4a5558;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes bgGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .light {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(180, 210, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: lightMove 30s infinite alternate ease-in-out;
+        }
+        .light1 { top: -150px; left: -150px; }
+        .light2 { bottom: -200px; right: -150px; background: radial-gradient(circle, rgba(220, 240, 200, 0.12) 0%, transparent 70%); }
+        @keyframes lightMove {
+            0% { transform: translate(0,0) scale(1); }
+            100% { transform: translate(60px, 40px) scale(1.2); }
+        }
+
+        .mouse-star {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: rgba(150, 180, 220, 0.25);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99;
+            animation: mouseStar 1.8s ease-out forwards;
+        }
+        @keyframes mouseStar {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 32px rgba(130, 170, 210, 0.15);
+            backdrop-filter: blur(16px);
+            animation: fadeIn 1.2s ease forwards;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+            color: #6b9bc2;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            animation: slideDown 1s ease .3s forwards;
+            opacity: 0;
+        }
+        .subtitle, .date {
+            animation: fadeIn 1s ease .6s forwards;
+            opacity: 0;
+            color: #7a8a96;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .swiper {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+        }
+        .swiper-slide {
+            width: 100%;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .content {
+            line-height: 2;
+            font-size: 16px;
+            color: #5a6a73;
+            margin-bottom: 30px;
+        }
+        .place-tip {
+            color: #6b9bc2;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .wish-box {
+            background: #f5f9fc;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #a0c4e2;
+        }
+        .wish-title {
+            margin-bottom: 15px;
+            color: #6b9bc2;
+        }
+        .wish-list {
+            list-style: none;
+            padding: 0;
+        }
+        .wish-list li {
+            margin-bottom: 12px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 34px;
+            background: linear-gradient(135deg, #9cc9e6, #6b9bc2);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 6px 20px rgba(110, 160, 200, 0.25);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 24px rgba(110, 160, 200, 0.35);
+        }
+
+        .float-item {
+            position: fixed;
+            pointer-events: none;
+            animation: floatUp 4s ease-in-out forwards;
+            z-index: 999;
+            bottom: 0;
+            font-size: 18px;
+        }
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-900px); }
+        }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.2);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .modal.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: modalPop 0.5s ease forwards;
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-title {
+            font-size: 24px;
+            color: #6b9bc2;
+            margin-bottom: 16px;
+        }
+        .modal-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <div class="light light1"></div>
+    <div class="light light2"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">苏婉清 生日快乐</h1>
+            <p class="subtitle">致喜欢安静与远方的你</p>
+            <p class="date">2026.04.09</p>
+        </div>
+
+        <div class="place-tip">☁️ 愿你的生活被安静、自由、温柔包围</div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/jjjdchangk/生日快乐7.jpg" alt="婉清">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/jjjdchangk/生日快乐3.jpg" alt="婉清">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/jjjdchangk/生日快乐2.jpg" alt="婉清">
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>婉清姐姐，今天是你的26岁生日。</p>
+            <p>我知道你喜欢安静，喜欢云南的温柔、内蒙古的辽阔，喜欢不被打扰的治愈。</p>
+            <p>我也知道，你过去习惯了一个人，很少拥有过热闹又安心的生日。</p>
+            <p>愿你错过的温柔、偏爱与安全感，都可以一点点补齐。</p>
+            <p>愿你往后的日子，安静自由，无忧无虑，永远被世界温柔以待。</p>
+        </div>
+
+        <div class="wish-box">
+            <h3 class="wish-title">给婉清的26岁小愿望 ✨</h3>
+            <ul class="wish-list">
+                <li>愿你拥有云南般的温柔，内心永远平静治愈</li>
+                <li>愿你拥有内蒙古般的自由，不再被烦恼束缚</li>
+                <li>愿你每天都能好好吃饭，好好睡觉，不慌不忙</li>
+                <li>愿你有人惦记，有人偏爱，永远不再孤单</li>
+                <li>愿你26岁，是被爱、安静与幸福包围的新开始</li>
+            </ul>
+        </div>
+
+        <button class="btn" onclick="showWish()">轻轻点击，接收祝福 ✨</button>
+    </div>
+
+    <div class="modal" id="wishModal">
+        <div class="modal-content">
+            <h2 class="modal-title">🎉 苏婉清 生日快乐 🎉</h2>
+            <p class="modal-text">愿你如远方般安静自由，永远被爱包围 💙</p>
+            <button class="btn" onclick="closeModal()">我收到啦 💛</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: { delay: 3500 },
+            loop: true,
+            effect: "fade",
+            speed: 1200
+        });
+
+        let floatInterval;
+
+        function createFloat() {
+            const item = document.createElement("div");
+            item.className = "float-item";
+            const rand = Math.random();
+            if (rand > 0.6) item.innerHTML = "💛";
+            else if (rand > 0.3) item.innerHTML = "☁️";
+            else item.innerHTML = "✨";
+            
+            item.style.left = Math.random() * window.innerWidth + "px";
+            item.style.fontSize = Math.random() * 12 + 16 + "px";
+            document.body.appendChild(item);
+            setTimeout(() => item.remove(), 4000);
+        }
+
+        document.addEventListener("mousemove", (e) => {
+            const star = document.createElement("div");
+            star.className = "mouse-star";
+            star.style.left = e.pageX + "px";
+            star.style.top = e.pageY + "px";
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1800);
+        });
+
+        function showWish() {
+            if (floatInterval) clearInterval(floatInterval);
+            floatInterval = setInterval(createFloat, 130);
+            document.getElementById("wishModal").classList.add("show");
+        }
+
+        function closeModal() {
+            document.getElementById("wishModal").classList.remove("show");
+        }
+    </script>
+</body>
+</html>
